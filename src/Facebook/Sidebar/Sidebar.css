@@ -1,0 +1,13 @@
+.sidebar{
+    padding: 25px 10px;
+    flex:1;
+    position: fixed;
+    
+}
+.displayuser{
+    display: flex;
+}
+.displayuser > h4{
+    margin-top: 8px;
+    margin-left: 15px;
+}
