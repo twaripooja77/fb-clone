@@ -12,27 +12,17 @@ import { collection } from "firebase/firestore";
 import StoryPost from './StoryPost';
 
 function StoryReel() {
-  const [story, setStory]=useState([]);
-  const[{user},dispatch]=useStateValue();
-  useEffect(()=>{
-    onSnapshot(collection(db,"reels"),orderBy("timestamp",'desc'),(snapshot)=>(
-      setStory(snapshot.docs.map((doc)=>({id:doc.id, data:doc.data()})))
-    ))
-  },[])
+  // const [story, setStory]=useState([]);
+  // const[{user},dispatch]=useStateValue();
+  // useEffect(()=>{
+  //   onSnapshot(collection(db,"reels"),orderBy("timestamp",'desc'),(snapshot)=>(
+  //     setStory(snapshot.docs.map((doc)=>({id:doc.id, data:doc.data()})))
+  //   ))
+  // },[])
   return (
     <div className='storyReel'>
-
-      <Story/>
-      <div className='story'>
-        {story.map((mystory)=>(
-<StoryPost key={mystory.id}
-storyPic={mystory.data.storyPic}  
-image={mystory.data.image}   />
-   ))}
-      </div>
-
-      {/* <Story
-image={user.photoURL}
+ <Story
+image="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=600"
 profileSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwQneCnRa5WmT8HxXgzmH-lX__c_Xiz4IBGd30tLbI6FasmSb4y164KvlUhHz_oGtBhOs&usqp=CAU"
 title="Add your Story"
 />
@@ -60,9 +50,19 @@ title="Richard Geller"
 image="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600"
 profileSrc="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600"
 title="Grace Bhattarai"
-/> */}
+/> 
 
-    </div>
+      
+      </div>
+//       <Story/>
+//       <div className='story'>
+//         {story.map((mystory)=>(
+// <StoryPost key={mystory.id}
+// storyPic={mystory.data.storyPic}  
+// image={mystory.data.image}   />
+//    ))}
+
+    
   )
 }
 
